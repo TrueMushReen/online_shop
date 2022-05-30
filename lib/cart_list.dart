@@ -10,9 +10,7 @@ class CartListWidget extends StatefulWidget {
   const CartListWidget({required this.cart});
 
   @override
-  State<StatefulWidget> createState() {
-    return _CartListWidgetState();
-  }
+  State<StatefulWidget> createState() => _CartListWidgetState();
 }
 
 class _CartListWidgetState extends State<CartListWidget> {
@@ -37,10 +35,15 @@ class _CartListWidgetState extends State<CartListWidget> {
         appBar: AppBar(
           title: const Text('My Cart'),
           actions: <Widget>[
-            FlatButton(
-              textColor: Colors.white,
-              onPressed: () => _checkout(),
-              child: const Text("Checkout"),
+            // TextButton({
+            //Color: Colors.white,
+            // void Function()? OnPressed : () => _checkout(),
+            // required Widget Child : const Text("Checkout"),
+            // })
+            TextButton(
+              style: TextButton.styleFrom(textStyle: const TextStyle()),
+              onPressed: _checkout,
+              child: const Text('Checkout'),
             )
           ],
         ),
